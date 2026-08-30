@@ -9,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class ColourPalette {
   colors = ['Red','Blue','Green','Yellow','Purple']
+
+  boxColor = {'background-color':'white'}
+
+  colorChange(color:string){
+    this.boxColor = {'background-color':color}
+  }
 }
