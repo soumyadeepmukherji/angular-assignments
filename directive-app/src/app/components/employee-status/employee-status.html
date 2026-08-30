@@ -1,0 +1,19 @@
+<section>
+    <h1 class="heading">Employee Status Table</h1>
+    <table class="border-collapse border border-gray-400">
+        <thead>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Department</th>
+            <th>Status</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.department}}</td>
+                <td>{{employee.status}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
