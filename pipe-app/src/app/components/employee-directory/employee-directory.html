@@ -1,0 +1,25 @@
+<section>
+    <h1 class="heading">Employee Status Table</h1>
+    <table class="border-collapse border border-gray-400">
+        <thead>
+            <th>name</th>
+            <th>department</th>
+            <th>salary</th>
+            <th>joiningDate</th>
+            <th>skills</th>
+            <th>Number of skills</th>
+            <th>status</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.name | uppercase}}</td>
+                <td>{{employee.department}}</td>
+                <td>{{employee.salary | currency:'INR'}}</td>
+                <td>{{employee.joiningDate | date:'dd/MM/yyyy'}}</td>
+                <td>{{employee.skills}}</td>
+                <td>{{employee.skills | skillcountPipe}}</td>
+                <td [ngStyle]="{'background-color':employee.status == 'active' ? 'yellow' : 'red'}">{{employee.status | titlecase}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss';
+
+td,th{
+    @apply border-2 border-zinc-500 p-3
+}
+
+.heading{
+    @apply text-2xl font-bold mb-4
+}
+
+.head-warp{
+    @apply bg-gray-500 text-white text-4xl font-bold px-4 py-6 mb-4
+}
