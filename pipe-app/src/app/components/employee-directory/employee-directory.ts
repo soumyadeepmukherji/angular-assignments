@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { SkillcountPipePipe } from '../../pipes/skillcount-pipe-pipe';
+import { ExexperiencePipePipe } from '../../pipes/exexperience-pipe-pipe';
 
 @Component({
-  imports: [CommonModule,SkillcountPipePipe],
+  imports: [CommonModule,SkillcountPipePipe,ExexperiencePipePipe],
   selector: 'app-employee-directory',
   styleUrl: './employee-directory.css',
   templateUrl: './employee-directory.html',
