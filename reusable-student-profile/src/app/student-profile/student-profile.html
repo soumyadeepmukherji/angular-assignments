@@ -1,0 +1,57 @@
+<div class="border border-gray-300 rounded-lg p-5 w-80">
+
+  <h2 class="text-2xl font-bold mb-4">
+    Student Profile
+  </h2>
+
+  @if (isLoggedIn) {
+
+    <ng-container *ngTemplateOutlet="studentDetails">
+    </ng-container>
+
+  }
+  @else {
+
+    <ng-container *ngTemplateOutlet="loginMessage">
+    </ng-container>
+
+  }
+
+
+  <!-- Student Details Template -->
+
+  <ng-template #studentDetails>
+
+    <div>
+
+      <p>
+        <strong>Name:</strong>
+        <span #studentName>{{ student.name }}</span>
+      </p>
+
+      <p>
+        <strong>Age:</strong>
+        {{ student.age }}
+      </p>
+
+      <p>
+        <strong>Course:</strong>
+        {{ student.course }}
+      </p>
+
+    </div>
+
+  </ng-template>
+
+
+  <!-- Login Message Template -->
+
+  <ng-template #loginMessage>
+
+    <p class="text-red-600 font-bold">
+      Please login to view details
+    </p>
+
+  </ng-template>
+
+</div>

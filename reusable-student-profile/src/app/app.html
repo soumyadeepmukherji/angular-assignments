@@ -1,0 +1,36 @@
+<div class="p-10">
+
+  <h1 class="text-3xl font-bold mb-6">
+    Student Management
+  </h1>
+
+
+  @if (showProfile) {
+
+    <app-student-profile></app-student-profile>
+
+  }
+
+
+  <button
+    class="bg-red-600 text-white px-4 py-2 rounded mt-5"
+    (click)="removeProfile()">
+
+    Remove Student Profile
+
+  </button>
+
+
+  @if (!showProfile) {
+
+    <button
+      class="bg-green-600 text-white px-4 py-2 rounded mt-5 ml-2"
+      (click)="showStudentProfile()">
+
+      Show Student Profile
+
+    </button>
+
+  }
+
+</div>
