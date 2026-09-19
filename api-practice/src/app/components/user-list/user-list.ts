@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../services/user';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   selector: 'app-user-list',
   styleUrl: './user-list.css',
   templateUrl: './user-list.html',

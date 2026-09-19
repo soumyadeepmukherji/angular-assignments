@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { UserList } from './components/user-list/user-list';
 
 @Component({
-  imports: [UserList],
+  imports: [UserList, RouterOutlet],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
