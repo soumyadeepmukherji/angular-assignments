@@ -1,5 +1,5 @@
 <h1>User List</h1>
-
+<p>Total users: {{ users.length }}</p>
 <ul>
     @for (user of users; track user.id) {
         <li>{{user.name}} - {{user.email}} <a [routerLink]="['/user', user.id]">View</a></li>

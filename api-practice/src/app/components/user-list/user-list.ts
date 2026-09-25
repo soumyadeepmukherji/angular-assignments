@@ -17,7 +17,9 @@ export class UserList implements OnInit{
   ngOnInit(): void {
     this.userService.getUser().subscribe({
       next: (data) => {
+        console.log('API DATA:', data);
         this.users = data
+        console.log('USER LIST:', this.users);
       },
       error: (error) => {
         console.log('Error: ', error)
