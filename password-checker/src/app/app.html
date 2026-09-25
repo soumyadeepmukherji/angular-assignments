@@ -1,0 +1,98 @@
+<h1 class="heading">Login Form</h1>
+
+
+<form [formGroup]="passwordForm">
+
+  <!-- User ID -->
+
+  <div class="field-group">
+
+    <label for="userId">
+      User ID
+    </label>
+
+    <input
+      type="text"
+      id="userId"
+      formControlName="userId"
+    >
+
+    @if (
+      passwordForm.controls['userId'].touched &&
+      passwordForm.controls['userId'].hasError('required')
+    ) {
+      <p>User ID is required</p>
+    }
+
+  </div>
+
+
+  <!-- Password -->
+
+  <div class="field-group">
+
+    <label for="password">
+      Password
+    </label>
+
+    <input
+      type="text"
+      id="password"
+      formControlName="password"
+    >
+
+    @if (
+      passwordForm.controls['password'].touched &&
+      passwordForm.controls['password'].hasError('required')
+    ) {
+      <p>Password is required</p>
+    }
+
+    @if (
+      passwordForm.controls['password'].touched &&
+      passwordForm.controls['password'].hasError('maxlength')
+    ) {
+      <p>Password cannot be more than 6 characters</p>
+    }
+
+  </div>
+
+
+  <!-- Confirm Password -->
+
+  <div class="field-group">
+
+    <label for="cpassword">
+      Confirm Password
+    </label>
+
+    <input
+      type="text"
+      id="cpassword"
+      formControlName="confirmPassword"
+    >
+
+
+    @if (
+      passwordForm.controls['confirmPassword'].touched &&
+      passwordForm.controls['confirmPassword'].hasError('required')
+    ) {
+      <p>Confirm Password is required</p>
+    }
+
+
+    @if (
+      passwordForm.controls['confirmPassword'].touched &&
+      passwordForm.controls['confirmPassword'].hasError('passwordMismatch')
+    ) {
+      <p>Confirm Password should match Password</p>
+    }
+
+  </div>
+
+
+  <button type="button" (click)="submit()">
+    Submit
+  </button>
+
+</form>
