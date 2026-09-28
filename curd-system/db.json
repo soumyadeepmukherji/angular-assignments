@@ -1,0 +1,20 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "employeeId": "EMP001",
+      "name": "Rahul Sharma",
+      "email": "rahul@gmail.com",
+      "department": "IT",
+      "salary": 45000
+    },
+    {
+      "id": 2,
+      "employeeId": "EMP002",
+      "name": "Amit Kumar",
+      "email": "amit@gmail.com",
+      "department": "HR",
+      "salary": 35000
+    }
+  ]
+}

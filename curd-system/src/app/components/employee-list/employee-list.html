@@ -1,0 +1,23 @@
+<p>employee-list works!</p>
+
+<table>
+    <thead>
+        <th>E.ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Dept</th>
+        <th>Sal</th>
+    </thead>
+    <tbody>
+        @for (item of employeeList; track $index) {
+            <tr>
+                <td>{{item.employeeId}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.department}}</td>
+                <td>{{item.salary}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
