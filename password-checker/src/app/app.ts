@@ -45,7 +45,8 @@ export class App {
 
     const confirmPassword = this.passwordForm.get('confirmPassword');
 
-
+    console.log(confirmPassword);
+    
     // Password value changes
     passwordControl?.valueChanges.subscribe(password => {
 
