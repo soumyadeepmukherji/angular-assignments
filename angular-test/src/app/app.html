@@ -1,0 +1,44 @@
+<header class="flex justify-between items-center">
+  <!-- Search Box -->
+  <input type="text" placeholder="Search..." [(ngModel)]="searchTerm" (input)="onSearch()" />
+
+  <div class="dropsect">
+  <!-- Filter Dropdown -->
+  <select [(ngModel)]="selectedDepartment" (change)="filterEmployee()">
+    <option value="">All Departments</option>
+    <option value="IT">IT</option>
+    <option value="HR">HR</option>
+    <option value="Finance">Finance</option>
+  </select>
+
+  <!-- Sort Dropdown -->
+  <select [(ngModel)]="sortDirection" (change)="sortID()" class="ml-2">
+    <option value="asc">ASC</option>
+    <option value="dec">DEC</option>
+  </select>
+
+  </div>
+</header>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>name</th>
+      <th>department</th>
+      <th>salary</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (emp of filterdata; track emp.id) {
+      <tr appHiglight>
+        <td>{{emp.id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.department}}</td>
+        <td>{{emp.salary | currency:'INR':'symbol':'1.2-2':'en-IN'}}</td>
+        <td>{{emp.isActive}}</td>
+      </tr>
+    }
+  </tbody>
+</table>
