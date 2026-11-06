@@ -1,0 +1,77 @@
+{
+  "products": [
+    {
+      "id": "W9q5BErNtFI",
+      "product": "test",
+      "category": "Transation Failed",
+      "raised": "test",
+      "date": "2026-11-06T08:00:00.000Z",
+      "status": "Complete"
+    },
+    {
+      "id": "4HRIObJuAFY",
+      "product": "POS",
+      "category": "Subscription error",
+      "raised": "rahul",
+      "date": "2026-11-05T20:00:00.000Z",
+      "status": "Complete"
+    },
+    {
+      "id": "qbLlUTEKwL4",
+      "product": "Tshirt",
+      "category": "Transation Failed",
+      "raised": "sandip",
+      "date": "2026-11-05T20:00:00.000Z",
+      "status": "Rejected"
+    },
+    {
+      "id": "Dq2PLWUZ1pY",
+      "product": "POS",
+      "category": "Transation Failed",
+      "raised": "dhanush",
+      "date": "2026-11-06T02:00:00.000Z",
+      "status": "Complete"
+    },
+    {
+      "id": "B37G6IKwZiQ",
+      "product": "phone",
+      "category": "Yes",
+      "raised": "test",
+      "date": "2026-11-06T05:30:00.000Z",
+      "status": "Rejected"
+    },
+    {
+      "id": "b44eHdvZmYs",
+      "product": "test4",
+      "category": "Transation Failed",
+      "raised": "test4",
+      "date": "2026-11-06T09:30:00.000Z",
+      "status": "Complete"
+    },
+    {
+      "id": "pCT0AvOyD8o",
+      "product": "test6",
+      "category": "Transation Failed",
+      "raised": "test6",
+      "date": "2026-11-05T20:00:00.000Z",
+      "status": "Complete"
+    },
+    {
+      "id": "pzEB8Lwp0IQ",
+      "product": "test8",
+      "category": "Transation Failed",
+      "raised": "test8",
+      "date": "2026-11-05T20:00:00.000Z",
+      "status": "Complete"
+    },
+    {
+      "id": "DJC2XhdIWYA",
+      "product": "test10",
+      "category": "Yes",
+      "raised": "",
+      "date": "2026-11-05T20:00:00.000Z",
+      "status": "Pending"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

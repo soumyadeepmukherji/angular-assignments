@@ -1,0 +1,84 @@
+<section class="form-section">
+    <mat-card class="example-card p-4" appearance="outlined">
+        <mat-card-header>
+            <mat-card-title>Form</mat-card-title>
+        </mat-card-header>
+
+        <form class="row g-3" [formGroup]="ProductForm" (ngSubmit)="onSubmit()">
+            <!-- Product -->
+            <div class="col-6">
+                <label for="product">Product</label>
+                <input type="text" class="form-control" formControlName="product">
+                @if(ProductForm.get('product').touched && ProductForm.get('product')?.hasError('required')){
+                    <small class="invalid-feedback">*Required Field*</small>
+                }
+            </div>
+            <!-- Category -->
+            <div class="col-6">
+                <label for="product">Category</label>
+                <select ngbDropdown class="d-inline-block form-select" formControlName="category">
+                    <option value="" id="dropdownBasic1" ngbDropdownToggle selected disabled>Select Category</option>
+                    <option>Yes</option>
+                    <option>Transation Failed</option>
+                    <option>Subscription error</option>
+                </select>
+                @if(ProductForm.get('category').touched && ProductForm.get('category')?.hasError('required')){
+                    <small class="invalid-feedback">*Required Field*</small>
+                }
+            </div>
+            <!-- Rised Date && time -->
+            <div class="col-6">
+                <label for="date">Date</label>
+                <mat-form-field>
+                    <input matInput [matDatepicker]="datepicker" formControlName="date">
+                    <mat-datepicker #datepicker/>
+                    <mat-datepicker-toggle [for]="datepicker" matSuffix/>
+                </mat-form-field>
+                @if(ProductForm.get('date').touched && ProductForm.get('date')?.hasError('required')){
+                    <small class="invalid-feedback">*Required Field*</small>
+                }
+            </div>
+            <div class="col-6">
+                <label for="time">Time</label>
+                <mat-form-field>
+                    <input matInput
+                        [matTimepicker]="timepicker"
+                        formControlName="date">
+                    <mat-timepicker #timepicker/>
+                    <mat-timepicker-toggle [for]="timepicker" matSuffix/>
+                </mat-form-field>
+                @if(ProductForm.get('date').touched && ProductForm.get('date')?.hasError('required')){
+                    <small class="invalid-feedback">*Required Field*</small>
+                }
+            </div>
+             <!-- Raised By -->
+            <div class="col-6">
+                <label for="product">Raised By</label>
+                <input type="text" class="form-control" formControlName="raised">
+                @if(ProductForm.get('raised').touched && ProductForm.get('raised')?.hasError('required')){
+                    <small class="invalid-feedback">*Required Field*</small>
+                }
+            </div>
+            <!-- Status -->
+            <div class="col-6">
+                <label for="product">Status</label>
+                <select ngbDropdown class="d-inline-block form-select" formControlName="status">
+                    <option value="" id="dropdownBasic1" ngbDropdownToggle selected disabled>Select Status</option>
+                    <option>Pending</option>
+                    <option>Complete</option>
+                    <option>Rejected</option>
+                </select>
+                @if(ProductForm.get('status').touched && ProductForm.get('status')?.hasError('required')){
+                    <small class="invalid-feedback">*Required Field*</small>
+                }
+            </div>
+
+            <div class="btn-wrap d-flex justify-content-end">
+                <button type="submit" class="btn btn-success">{{isEditing ? 'Update' : 'Add'}}</button>
+                <button type="reset" class="btn btn-primary ms-2">Reset</button>
+            </div>
+        </form>
+    
+    
+    </mat-card>
+</section>

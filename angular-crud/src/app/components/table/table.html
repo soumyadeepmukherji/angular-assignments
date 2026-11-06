@@ -1,0 +1,69 @@
+
+
+<table mat-table [dataSource]="dataSource">
+    //Id
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Ticket ID </th>
+        <td mat-cell *matCellDef="let product"> {{product.id}} </td>
+    </ng-container>
+    //Product
+    <ng-container matColumnDef="product">
+        <th mat-header-cell *matHeaderCellDef> Product </th>
+        <td mat-cell *matCellDef="let product"> {{product.product}} </td>
+    </ng-container>
+    //Category
+    <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef> Category </th>
+        <td mat-cell *matCellDef="let product"> {{product.category}} </td>
+    </ng-container>
+    //Raised
+    <ng-container matColumnDef="raised">
+        <th mat-header-cell *matHeaderCellDef> Raised By </th>
+        <td mat-cell *matCellDef="let product"> {{product.raised}} </td>
+    </ng-container>
+    //Date
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Rised Date </th>
+        <td mat-cell *matCellDef="let product"> {{product.date}} </td>
+    </ng-container>
+    //Status
+    <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let product"> {{product.status}} </td>
+    </ng-container>
+    //Actions
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let product"> 
+            <Button (click)="deletRow(product.id)">Delete</Button> 
+            <button (click)="editRow(product)">Edit</button>
+            <button (click)="open(content, product)">View</button>
+        </td>
+    </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[3, 5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+
+<!-- Model -->
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<ul *ngIf="selectedRow">
+            <li><strong>Product : </strong>{{selectedRow.product}}</li>
+            <li><strong>Category : </strong>{{selectedRow.category}}</li>
+            <li><strong>Raised Date : </strong>{{selectedRow.date}}</li>
+            <li><strong>Raised By : </strong>{{selectedRow.raised}}</li>
+            <li><strong>Status : </strong>{{selectedRow.status}}</li>
+        </ul>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-secondary" (click)="modal.close('Save click')">Close</button>
+	</div>
+</ng-template>
+
